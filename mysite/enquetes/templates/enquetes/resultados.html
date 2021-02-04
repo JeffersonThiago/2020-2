@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <tittle>App Enquete</tittle>
+    </head>
+
+    <body>
+        <h2>Aplicação de Enquetes</h2>
+
+        <h4>Resultados da Enquete # {{enquete.id}}<br/>
+        (<i>{{enquete.data_publicacao}}</i>)</h4>
+        <h3>{{ enquete.texto}}</h3>
+        Quantidade de VOTOS por opção:
+
+        <ul>
+        {% for op in enquete.opcao_set.all %}
+            <li>{{op.texto }} = {{op.votos}} voto{{op.votos|pluralize }}<li/>
+        {% endfor %}
+        </ul>
+        <hr/>
+        <a href= "{% url 'enquetes:detalhes' enquete.id %}"> Votar novamente</a>
+    </body>
+</html>

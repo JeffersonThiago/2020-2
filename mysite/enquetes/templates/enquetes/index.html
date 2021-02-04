@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <tittle>
+        App Enquetes
+        </tittle>
+    </head>
+
+    <body>
+        <h2>Aplicação de Enquetes</h2>
+        <hr/>
+        {% if ultimas_enquetes %}
+            <ul>
+            {% for enq in ultimas_enquetes %}
+            <li><a href="{% url 'enquetes:detalhes' enq.id %}">
+                {{enq.texto}}</a></li>
+            {% endfor %}
+            </ul>
+        {%else%}
+            <p>Nenhuma enquete cadastrda até o momento</p>
+        {% endif %}
+        <hr/>
+        <a href="{% url 'main:index' %}">Home do projeto</a>
+    </body>
+
+</html>
