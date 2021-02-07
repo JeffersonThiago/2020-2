@@ -1,0 +1,16 @@
+li a{
+    color: green;
+    text-decoration:none;
+}
+li:hover, .active {
+    background-color:yellow;
+}
+body{
+    background: white url("imgs/imagen.gif");
+}
+img {
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
