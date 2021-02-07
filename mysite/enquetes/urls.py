@@ -13,6 +13,6 @@ urlpatterns = [
         '<int:pk>/resultado/', views.ResultadoView.as_view(), name='resultado'
         ),
     path(
-        '<int:enquete_id>/votacao/', views.votacao, name="votacao"
+        '<int:enquete_id>/votacao/', views.VotacaoView.as_view(), name="votacao"
         ),
     ]

@@ -4,17 +4,17 @@
     </head>
     <body>
         <h2>Aplicação de Enquetes</h2>
-        <h3>Detalhes da Enquete # {{enquete.id}}</h3>
-        <h4>{{ enquete.texto}}</h4>
+        <h3>Detalhes da Enquete # {{pergunta.id}}</h3>
+        <h4>{{ pergunta.texto}}</h4>
 
-        (<i>{{enquete.data_publicacao}}</i>)</br>
+        (<i>{{pergunta.data_publicacao}}</i>)</br>
         Escolha a sua opção:
         {% if error_message %}
             <p><strong>{{error_message}}</strong></p>
         {% endif %}
-        <form action="{% url 'enquetes:votacao' enquete.id %}" method="post">
+        <form action="{% url 'enquetes:votacao' pergunta.id %}" method="post">
             {% csrf_token %}
-            {% for op in enquete.opcao_set.all %}
+            {% for op in pergunta.opcao_set.all %}
                 <input type="radio" name="opcao" value = "{{op.id}}"
                     id="opcao{{forloop.counter}}"/>
                 <label for ="opcao{{ forloop.counter }}"> {{op.texto}}</label><br/>
